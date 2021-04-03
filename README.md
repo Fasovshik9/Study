@@ -1,6 +1,6 @@
 # To run this project:
 
-## Move pokemon-app:
+## Move to pokemon-app:
 
 ### `cd pokemon-app`
 
