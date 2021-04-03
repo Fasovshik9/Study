@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: cursive;
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url(./assets/forest.jpg);
+  user-select: none;
+}
+#root {
+  height: 100%;
+}
