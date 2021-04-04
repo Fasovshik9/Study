@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Person from './Person';
 import axios from 'axios';
-// import '../css/WrapperPerson.css'
+import '../css/WrapperPerson.css'
 import sherlock2 from '../assets/sherlock1.png';
 import sherlock1 from '../assets/sherlock2.jpg';
 

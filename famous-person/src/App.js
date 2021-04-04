@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import './App.css';
+import './App.css';
 import WrapperPerson from './components/WrapperPerson'
 import InfoPerson from './components/InfoPerson'
 import { Redirect, Route, Switch } from "react-router-dom";

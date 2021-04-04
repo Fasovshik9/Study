@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-// import "../css/Person.css";
+import "../css/Person.css";
 
 class Person extends Component {
   render() {

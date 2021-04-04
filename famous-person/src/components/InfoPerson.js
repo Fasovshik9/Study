@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import person from '../assets/sherlock3.jpg';
-// import "../css/InfoPerson.css";
+import "../css/InfoPerson.css";
 
 class infoPerson extends Component {
     componentWillUnmount() {
