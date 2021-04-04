@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import "../css/Pokemon.css";
+// import "../css/Person.css";
 
-class Pokemon extends Component {
+class Person extends Component {
   render() {
     return (
       <>
         <p>Name: {this.props.name}</p>
         <p>Type: {this.props.type}</p>
         <p>Info: {this.props.aLittleInfo}</p>
-        <Link className="link" to="/info_pokemon">
-          More Info About Pokémon
+        <Link className="link" to="/info_person">
+          More Info About Person
         </Link>
       </>
     );
   }
 }
 
-export default Pokemon;
+export default Person;

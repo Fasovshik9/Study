@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import pokemon from '../assets/pokemon3.png';
-import "../css/InfoPokemon.css";
+import person from '../assets/sherlock3.jpg';
+// import "../css/InfoPerson.css";
 
-class infoPokemon extends Component {
+class infoPerson extends Component {
     componentWillUnmount() {
         this.props.getShowResults()
     }
@@ -11,7 +11,7 @@ class infoPokemon extends Component {
     render() {
         return (
             <main>
-                <img className="imgInfoName" src={pokemon} alt="pokemon" />
+                <img className="imgInfoName" src={person} alt="person" />
                 <h1>Biology</h1>
                 <section>
                     <h2>Physiology</h2>
@@ -33,4 +33,4 @@ class infoPokemon extends Component {
     }
 }
 
-export default infoPokemon;
+export default infoPerson;
