@@ -14,16 +14,16 @@ class infoPerson extends Component {
                 <img className="imgInfoName" src={person} alt="person" />
                 <h1>Biology</h1>
                 <section>
-                    <h2>Physiology</h2>
-                    <p>{this.props.physiology}</p>
+                    <h2>Biography</h2>
+                    <p>{this.props.biography}</p>
                 </section>
                 <section>
-                    <h2>Natural abilities</h2>
-                    <p>{this.props.abilities}</p>
+                    <h2>Legacy</h2>
+                    <p>{this.props.legacy}</p>
                 </section>
                 <section>
-                    <h2>Behavior</h2>
-                    <p>{this.props.behavior}</p>
+                    <h2>Finances</h2>
+                    <p>{this.props.finances}</p>
                 </section>
                 <Link className="link" to="/">
                     Come Back

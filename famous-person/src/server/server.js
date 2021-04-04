@@ -19,7 +19,7 @@ app.post('/persone', (request, response) => {
     response.header('Access-Control-Allow-Origin', request.headers.origin);
 
     let logs = JSON.parse(fs.readFileSync(path.resolve(__dirname, info), 'utf-8'));
-    if (request.body.name == logs.name) {
+    if (request.body.name == logs.firstName) {
         response.send(true);
     } else {
         response.send(false);

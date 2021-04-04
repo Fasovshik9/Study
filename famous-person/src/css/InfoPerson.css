@@ -1,12 +1,29 @@
-p {
-  font-size: 20px;
+.text,
+section p {
+  font-size: 25px;
   white-space: pre-line;
+  background: rgba(0, 170, 238, 0.9); /* Цвет фона */
+  color: #fff; /* Цвет текста */
+  padding: 5px; /* Поля вокруг текста */
+  margin: 0 auto;
+  width: 1000px;
+  border-radius: 30px;
 }
-
 .imgInfoName {
   width: 480px;
   height: 360px;
   margin: 0 auto;
   border: 0px;
   border-radius: 0px;
+}
+h2 {
+  background: rgba(0, 0, 0, 0.9); /* Цвет фона */
+  color: #fff; /* Цвет текста */
+  padding: 5px; /* Поля вокруг текста */
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+.form {
+  width: 200px;
 }
