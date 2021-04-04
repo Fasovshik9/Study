@@ -1,7 +1,7 @@
 # To run this project:
 
-## Move to pokemon-app:
+## Move to famous-person:
 
-### `cd pokemon-app`
+### `cd famous-person`
 
-## Follow the instructions in the pokemon-app
+## Follow the instructions in the famous-person
