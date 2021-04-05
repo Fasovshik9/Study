@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import person from '../assets/sherlock3.jpg';
 import "../css/InfoPerson.css";
+import Slider from "./Slider";
 
 class infoPerson extends Component {
+    componentDidMount() {
+        this.props.addPersons()
+    }
+
     componentWillUnmount() {
         this.props.getShowResults()
     }
@@ -11,7 +15,7 @@ class infoPerson extends Component {
     render() {
         return (
             <main>
-                <img className="imgInfoName" src={person} alt="person" />
+                { this.props.images.length===0 ? null : <Slider slides={this.props.images} />}
                 <h1>Biology</h1>
                 <section>
                     <h2>Biography</h2>

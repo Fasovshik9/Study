@@ -3,10 +3,18 @@ const app = express();
 const fs = require('fs');
 const path = require('path');
 const info = 'info.json';
+const img = 'images.json';
 var cors = require('cors');
 
 app.use(cors());
 app.use(express.json());
+
+app.get('/persons', (request, response) => {
+    response.header('Access-Control-Allow-Origin', request.headers.origin);
+    let logs = JSON.parse(fs.readFileSync(path.resolve(__dirname, img), 'utf-8'));
+    response.send(logs.img);
+    return response.end();
+});
 
 app.get('/data', (request, response) => {
     response.header('Access-Control-Allow-Origin', request.headers.origin);

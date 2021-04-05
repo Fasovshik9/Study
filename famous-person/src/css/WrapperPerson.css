@@ -7,7 +7,7 @@ h1 {
     1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
 }
 
-img {
+.titleImg {
   width: 540px;
   height: 360px;
   border-radius: 10%;
@@ -19,17 +19,27 @@ main {
   text-align: center;
 }
 
-.button {
-  height: 60px;
-  width: 150px;
-  font-size: 30px;
+.general {
   color: rgb(120, 3, 187);
   font-family: cursive;
   display: block;
   position: relative;
-  margin: 30px auto;
-  padding: 5px 20px;
   border: 3px solid rgb(120, 3, 187);
   border-radius: 10px;
   background-color: rgb(59, 247, 122);
+}
+
+.button{
+  margin: 30px auto;
+  height: 60px;
+  width: 150px;
+  font-size: 30px;
+  padding: 5px 20px;
+}
+
+.submit{
+  margin: 15px auto;
+  font-size: 20px;
+  height: 40px;
+  width: 100px;
 }

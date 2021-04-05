@@ -15,10 +15,8 @@ class SearchBar extends Component {
   }
 
   handleSubmit = () => {
-    alert('Ansver: ' + this.state.ansver);
+    alert('Answer: ' + this.state.ansver);
   }
-
-  nameValidation
 
   nameValidation = (e) => {
     e.preventDefault();
@@ -34,6 +32,7 @@ class SearchBar extends Component {
         .then((response) => {
           if (response.data) {
             this.setState({ ansver: 'Yes, you are right' });
+            this.props.wrapperShowResults();
           } else {
             this.setState({ ansver: 'No, try again' });
           }
@@ -44,19 +43,20 @@ class SearchBar extends Component {
         });
     }
   }
+
   render() {
     return (
       <main className="main">
         <h1>Who's That Famous Person?</h1>
-        { this.props.showResults ? <img src={sherlock1} alt="person" /> : <img src={sherlock2} alt="person" />}
+        { this.props.showResults ? <img className="titleImg" src={sherlock1} alt="person" /> : <img className="titleImg" src={sherlock2} alt="person" />}
         <form className="text form" onSubmit={this.nameValidation}>
-          <label for="keyName" >
+          <label htmlFor="keyName" >
             First Name:
             </label>
           <input type="text" id="keyName" ref={this.input} />
-          <input type="submit" value="Submit" />
+          <input className="general submit" type="submit" value="Submit" />
         </form>
-        <button className="button" onClick={this.props.wrapperShowResults}>{this.props.showResults ? "Return" : "Answer"}</button>
+        <button className="general button" onClick={this.props.wrapperShowResults}>{this.props.showResults ? "Return" : "Answer"}</button>
         { this.props.showResults ? <Person {...this.props.profileDetails} /> : null}
       </main>
     );

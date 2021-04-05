@@ -10,11 +10,13 @@ class SearchBar extends Component {
     super();
     this.state = {
       profileDetails: {},
+      images: [],
       showResults: false
     }
     this.fetchPerson = this.fetchPerson.bind(this);
     this.getShowResults = this.getShowResults.bind(this);
     this.wrapperShowResults = this.wrapperShowResults.bind(this);
+    this.addPersons = this.addPersons.bind(this);
   }
 
   wrapperShowResults() {
@@ -38,6 +40,18 @@ class SearchBar extends Component {
       });
   }
 
+  addPersons() {
+    if (this.state.images.length === 0) {
+      axios.get('http://localhost:5000/persons')
+      .then((response) => {
+        this.setState({ images: response.data })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -45,7 +59,7 @@ class SearchBar extends Component {
           <Route exact path="/" render={() => <WrapperPerson showResults={this.state.showResults} wrapperShowResults={this.wrapperShowResults} profileDetails={this.state.profileDetails} />} />
           {Object.keys(this.state.profileDetails).length === 0 ? <Redirect to="/" /> : <Route
             path="/info_person"
-            render={() => <InfoPerson{...this.state.profileDetails.info} getShowResults={this.getShowResults} />}
+            render={() => <InfoPerson {...this.state.profileDetails.info} images={this.state.images} getShowResults={this.getShowResults} addPersons={this.addPersons} />}
           />}
         </Switch>
       </div>

@@ -9,13 +9,6 @@ section p {
   width: 1000px;
   border-radius: 30px;
 }
-.imgInfoName {
-  width: 480px;
-  height: 360px;
-  margin: 0 auto;
-  border: 0px;
-  border-radius: 0px;
-}
 h2 {
   background: rgba(0, 0, 0, 0.9); /* Цвет фона */
   color: #fff; /* Цвет текста */
