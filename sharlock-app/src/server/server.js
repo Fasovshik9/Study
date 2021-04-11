@@ -19,16 +19,6 @@ app.get('/persons', async (request, response) => {
     }
 });
 
-app.get('/info', async (request, response) => {
-    try {
-        response.header('Access-Control-Allow-Origin', request.headers.origin);
-        let logs = JSON.parse(await fs.readFile(path.resolve(__dirname, img), 'utf-8'));
-        response.send(logs.info[0]);
-    } catch (error) {
-        response.sendStatus(500);
-    }
-});
-
 app.get('/biography', async (request, response) => {
     try {
         response.header('Access-Control-Allow-Origin', request.headers.origin);
@@ -46,7 +36,7 @@ app.get('/books', async (request, response) => {
         const data = JSON.parse(await fs.readFile(path.resolve(__dirname, info), 'utf-8'));
         const books = data.books.map(book => ({
             ...book,
-            rating: book.rating.length ? book.rating.reduce((acc, n) => acc + n, 0) / book.rating.length : 0
+            rating: book.rating.length ? (book.rating.reduce((acc, n) => acc + n, 0) / book.rating.length).toFixed(1) : 0
         }));
         response.send(books);
     } catch (error) {
@@ -63,7 +53,7 @@ app.get('/books/:bookId', async (request, response) => {
         response.send(book
             ? {
                 ...book,
-                rating: book.rating.length ? book.rating.reduce((acc, n) => acc + n, 0) / book.rating.length : 0
+                rating: book.rating.length ? (book.rating.reduce((acc, n) => acc + n, 0) / book.rating.length).toFixed(1) : 0
             }
             : null
         );
@@ -79,12 +69,32 @@ app.post('/books/:bookId', async (request, response) => {
         const { rating } = request.body;
         const data = JSON.parse(await fs.readFile(path.resolve(__dirname, info), 'utf-8'));
         const book = data.books.find(b => b.id === bookId);
-        book.rating.push(rating);
+        book.rating.push(+rating);
         await fs.writeFile(path.resolve(__dirname, info), JSON.stringify(data), 'utf-8');
         response.send(book
             ? {
                 ...book,
-                rating: book.rating.length ? book.rating.reduce((acc, n) => acc + n, 0) / book.rating.length : 0
+                rating: book.rating.length ? (book.rating.reduce((acc, n) => acc + n, 0) / book.rating.length).toFixed(1) : 0
+            }
+            : null);
+    } catch (error) {
+        response.sendStatus(500);
+    }
+});
+
+app.post('/movies/:movieId', async (request, response) => {
+    try {
+        response.header('Access-Control-Allow-Origin', request.headers.origin);
+        const { movieId } = request.params;
+        const { rating } = request.body;
+        const data = JSON.parse(await fs.readFile(path.resolve(__dirname, info), 'utf-8'));
+        const movie = data.movies.find(b => b.id === movieId);
+        movie.rating.push(+rating);
+        await fs.writeFile(path.resolve(__dirname, info), JSON.stringify(data), 'utf-8');
+        response.send(movie
+            ? {
+                ...movie,
+                rating: movie.rating.length ? (movie.rating.reduce((acc, n) => acc + n, 0) / movie.rating.length).toFixed(1) : 0
             }
             : null);
     } catch (error) {
@@ -96,7 +106,10 @@ app.get('/movies', async (request, response) => {
     try {
         response.header('Access-Control-Allow-Origin', request.headers.origin);
         const data = JSON.parse(await fs.readFile(path.resolve(__dirname, info), 'utf-8'));
-        const movies = data.movies;
+        const movies = data.movies.map(movie => ({
+            ...movie,
+            rating: movie.rating.length ? (movie.rating.reduce((acc, n) => acc + n, 0) / movie.rating.length).toFixed(1) : 0
+        }));
         response.send(movies);
     } catch (error) {
         response.sendStatus(500);
@@ -109,7 +122,12 @@ app.get('/movies/:movieId', async (request, response) => {
         response.header('Access-Control-Allow-Origin', request.headers.origin);
         const data = JSON.parse(await fs.readFile(path.resolve(__dirname, info), 'utf-8'));
         const movie = data.movies.find(m => m.id === movieId);
-        response.send(movie ? movie : null);
+         response.send(movie
+            ? {
+                ...movie,
+                rating: movie.rating.length ? (movie.rating.reduce((acc, n) => acc + n, 0) / movie.rating.length).toFixed(1) : 0
+            }
+            : null);
     } catch (error) {
         response.sendStatus(500);
     }

@@ -24,12 +24,15 @@ export class MoviesComponent extends Component {
         return (
             <section>
                 <h1>Лучшие экранизации</h1>
-                <section>
+                <section className="my-3 d-flex bd-highlight justify-content-center">
                     {movies.map((movie) => (
-                        <div>
-                            <Link to={`movies/${movie.id}`}>
+                        <div key={movie.id} className=" mx-3 bd-highlight card">
+                            <Link to={`movies/${movie.id}`} className="link">
+                                <img src={movie.poster} className="d-block rounded mx-auto" width={240} height={370} />
+                                <div className="containerCard">
                                 <h2>{movie.name}</h2>
-                                <img src={movie.poster} />
+                                <p>Рейтинг: {movie.rating}</p>
+                                </div>
                             </Link>
                         </div>
                     ))}

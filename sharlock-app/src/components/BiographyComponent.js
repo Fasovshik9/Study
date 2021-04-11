@@ -6,7 +6,7 @@ export class BiographyComponent extends Component {
     constructor() {
         super();
         this.state = {
-            biography: '',
+            biography: {},
             books: []
         };
     }
@@ -26,30 +26,33 @@ export class BiographyComponent extends Component {
     render() {
         const { biography, books } = this.state;
         return (
-            <section>
-                <section>
-                    <h1>Биография</h1>
-                    <p>{biography}</p>
-                </section>
-                <section>
-                    <h1>Произведения</h1>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Название</th>
-                                <th>Год</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {books.map(book => (
+            <section className="containerBiography containerGrid">
+                    <div className="textWrapper">
+                        <h1>Биография</h1>
+                        <p>{biography.text}</p>
+                    </div>
+                    <div className="imgWrapper">
+                        <img className="rounded-circle" src={biography.img} width={200} height={200}/>
+                    </div>
+                    <div className="thingWrapper">
+                        <h2>Лучшие литературные произведения</h2>
+                        <table className="table">
+                            <thead className="thead-dark">
                                 <tr>
-                                    <td>{book.name}</td>
-                                    <td>{book.year}</td>
+                                    <th>Название</th>
+                                    <th>Год</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </section>
+                            </thead>
+                            <tbody>
+                                {books.map(book => (
+                                    <tr key={book.id}>
+                                        <td>{book.name}</td>
+                                        <td>{book.year}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
             </section>
         );
     }

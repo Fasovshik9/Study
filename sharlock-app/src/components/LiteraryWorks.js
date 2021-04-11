@@ -24,14 +24,19 @@ class LiteraryWorks extends Component {
         return (
             <section>
                 <h1>Лучшие литературные произведения</h1>
+                <section className="my-3 d-flex bd-highlight justify-content-center">
                 {this.state.books.map((book) => (
-                    <div>
-                        <Link to={`books/${book.id}`}>
-                            <h2>{book.name}</h2>
+                    <div key={book.id} className=" mx-3 bd-highlight card">
+                        <Link to={`books/${book.id}`} className="link">
                             <img src={book.poster} />
+                            <div className="containerCard">
+                            <h2>{book.name}</h2>
+                            <p>Рейтинг: {book.rating}</p>
+                            </div>
                         </Link>
                     </div>
                 ))}
+                </section>
             </section>
         );
     };

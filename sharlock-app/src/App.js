@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import './App.css';
 import axios from 'axios';
-import Slider from './components/slider/Slider';
-import MainWrapper from './components/MainWrapper';
 import LiteraryWorks from './components/LiteraryWorks';
 import { BiographyComponent } from './components/BiographyComponent';
 import { MoviesComponent } from './components/MoviesComponent';
@@ -20,14 +16,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      images: [],
-      info: {}
+      images: []
     }
   }
 
   componentDidMount() {
     this.addImg()
-    this.addInfo()
   }
 
   addImg = () => {
@@ -41,16 +35,6 @@ class App extends Component {
     }
   }
 
-  addInfo = () => {
-    if (Object.keys(this.state.info).length === 0) {
-      axios.get('http://localhost:5000/info')
-        .then((response) => {
-          this.setState({ info: response.data })
-        }).catch((error) => {
-          console.log(error);
-        });
-    }
-  }
 
   render() {
     return (
@@ -61,9 +45,7 @@ class App extends Component {
         </Route>
         <Route exact path="/">
           <div className='App' >
-            <CarouselBox />
-            {this.state.images.length === 0 ? null : <Slider slides={this.state.images} />}
-            <MainWrapper img={this.state.info.img} text={this.state.info.text} />
+            <CarouselBox images={this.state.images}/>
             <BiographyComponent />
             <LiteraryWorks />
             <MoviesComponent />
