@@ -1,18 +1,22 @@
 {
-  "name": "famous-person",
+  "name": "sherlok-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.1",
+    "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.1",
-    "concurrently": "^6.0.0",
+    "bootstrap": "^4.6.0",
+    "concurrently": "^6.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "json-server": "^0.16.3",
     "react": "^16.14.0",
+    "react-bootstrap": "^1.5.2",
+    "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4",
@@ -43,6 +47,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://localhost:5000/"
+  }
 }

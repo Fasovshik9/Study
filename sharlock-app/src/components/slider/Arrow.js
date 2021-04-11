@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import React, { memo } from 'react'
 import { css, jsx } from '@emotion/react'
-import leftArrow from '../assets/img/left-arrow.svg'
-import rightArrow from '../assets/img/right-arrow.svg'
+import leftArrow from '../../assets/img/left-arrow.svg'
+import rightArrow from '../../assets/img/right-arrow.svg'
 
 const Arrow = ({ direction, handleClick }) => {
   return (
