@@ -2,7 +2,7 @@
 
 ## Move to sherlok-app:
 
-### cd sherlok-app
+### `cd sherlok-app`
 
 ## Install dependencies:
 
