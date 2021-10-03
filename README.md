@@ -1,7 +1,13 @@
-# This is my bad code! You are welcome!
+# To run this project on your own machine:
 
-## gamingSnake
-This is a game written in C ++
+## Move to sherlok-app:
 
-## site
-This is a site about sherlock
+### `cd sherlok-app`
+
+## Install dependencies:
+
+### `npm i`
+
+## Run the project (require ports 3000 and 5000):
+
+### `npm run start`
