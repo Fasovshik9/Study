@@ -1,0 +1,8 @@
+﻿  Field.cpp
+C:\Users\fasovshik9\source\repos\GamingSnake\GamingSnake\Field.h(7,7): warning C4309: 'default argument': truncation of constant value
+C:\Users\fasovshik9\source\repos\GamingSnake\GamingSnake\Field.cpp(28,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fasovshik9\source\repos\GamingSnake\GamingSnake\Field.cpp(31,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fasovshik9\source\repos\GamingSnake\GamingSnake\Field.cpp(45,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fasovshik9\source\repos\GamingSnake\GamingSnake\Field.cpp(58,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\fasovshik9\source\repos\GamingSnake\GamingSnake\Field.cpp(60,21): warning C4018: '<': signed/unsigned mismatch
+  GamingSnake.vcxproj -> C:\Users\fasovshik9\source\repos\GamingSnake\Debug\GamingSnake.exe
